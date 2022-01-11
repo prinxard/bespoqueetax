@@ -74,50 +74,6 @@ export const ViewAnnualTable = ({ remittance, totalemployees, totaltax, grosssum
 
   return (
     <>
-{/* 
-      <Widget>
-        <div className="flex flex-col lg:flex-row w-full lg:space-x-2 space-y-2 lg:space-y-0 mb-2 lg:mb-4">
-
-          <div className="w-full lg:w-1/4">
-            <Widget1
-              color="green"
-              title="2020"
-              // description={formatNumber(data[0].totalRemittance)}
-              right={<Icons.TotalRemittance />}
-            />
-          </div>
-
-          <div className="w-full lg:w-1/4">
-            <Widget1
-              color="red"
-              title="Pending Remittance"
-              // description={formatNumber(data[0].pendingRemittance)}
-              right={<Icons.PendingRemittance />}
-            />
-          </div>
-
-          <div className="w-full lg:w-1/4">
-            <Widget1
-              color="blue"
-              title="Revenue Items"
-              // description={formatNumber(data[0].revenueItems)}
-              right={<Icons.RevenueItems />}
-            />
-          </div>
-
-          <div className="w-full lg:w-1/4">
-            <Widget1
-              color="yellow"
-              title="Tax receipts"
-              // description={formatNumber(data[0].taxReceipts)}
-              right={<Icons.TaxReceipt />}
-            />
-          </div>
-        </div>
-
-      </Widget> */}
-
-
       <Widget>
         <table className="table divide-y">
           <thead>
