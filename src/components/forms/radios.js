@@ -1,16 +1,19 @@
 
-export const Radio = ({inline = false}) => (
+export const Radio = ({ inline = false }) => (
   <div className={`form-element ${inline ? 'form-element-inline' : ''}`}>
     <div className="form-label">Label</div>
     <div className="flex items-center justify-start space-x-2">
       <div className="inline-flex items-center space-x-2">
+
         <input
           type="radio"
           value="0"
           name="r1"
           className="form-radio text-blue-500 h-4 w-4"
         />
+
         <span>Option 1</span>
+        
       </div>
       <div className="inline-flex items-center space-x-2">
         <input
@@ -26,7 +29,7 @@ export const Radio = ({inline = false}) => (
   </div>
 )
 
-export const InvalidRadio = ({inline = false}) => (
+export const InvalidRadio = ({ inline = false }) => (
   <div className={`form-element ${inline ? 'form-element-inline' : ''}`}>
     <div className="form-label">First name</div>
 
@@ -55,7 +58,7 @@ export const InvalidRadio = ({inline = false}) => (
   </div>
 )
 
-export const ValidRadio = ({inline = false}) => (
+export const ValidRadio = ({ inline = false }) => (
   <div className={`form-element ${inline ? 'form-element-inline' : ''}`}>
     <div className="form-label">First name</div>
     <div className="flex items-center justify-start space-x-2">

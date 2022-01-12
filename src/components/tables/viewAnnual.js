@@ -2,6 +2,7 @@ import Widget from "../widget";
 import { formatNumber } from "../../functions/numbers";
 import * as Icons from '../../components/Icons/index';
 import Widget1 from "../dashboard/widget-1";
+import dateformat from "dateformat";
 
 const fields = [
   // {
@@ -61,6 +62,8 @@ const fields = [
 
 export const ViewAnnualTable = ({ remittance, totalemployees, totaltax, grosssum }) => {
   let items = remittance;
+  // let lstest = "2022-01-01"
+  // let tody =  dateformat(lstest, 'ddd, mmm dS, yyyy')
   // console.log(items)
   remittance.map((remittance) => {
     remittance["amount"] = formatNumber(remittance["amount"]);
