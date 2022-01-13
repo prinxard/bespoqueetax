@@ -11,9 +11,28 @@ const tabs = [
         index: 0,
         // title: 'Profile settings',
         content: (
-            <div className="py-4 w-full lg:w-1/2">
+            <div className="flex justify-evenly py-4 w-full lg:w-1/2">
                 <AccountSettings />
             </div>
+
+            // <div className="flex">
+            //     <div className="flex-none w-64 ...">
+            //         <AccountSettings />
+            //     </div>
+            //     <div className="flex-initial w-14 ...">
+
+            //     </div>
+            //     <div className="flex-initial w-64 ...">
+            //         <AccountSettings />
+            //     </div>
+            //     <div className="flex-initial w-14 ...">
+
+            //     </div>
+            //     <div className="flex-initial w-96 ...">
+            //         <AccountSettings />
+            //     </div>
+            // </div>
+
         )
     },
     //   {
