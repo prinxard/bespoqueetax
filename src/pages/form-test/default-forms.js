@@ -502,25 +502,25 @@ const Index = () => {
                   <div className="mb-6 grid grid-cols-3 gap-4">
                     <label htmlFor="employername">Partner Name:</label>
                     <input type="text" id="employername" className="form-control w-full rounded"
-                      />
+                    />
                   </div>
                   <div className="mb-6 grid grid-cols-3 gap-4">
                     <label htmlFor="employername">Partner Address:</label>
                     <input type="text" id="employername" className="form-control w-full rounded"
-                       />
+                    />
                   </div>
                   <div className="mb-6 grid grid-cols-3 gap-4">
                     <label htmlFor="employername">Partner Phone:</label>
                     <input type="text" id="employername" className="form-control w-full rounded"
-                      />
+                    />
                   </div>
                   <div className="mb-6 grid grid-cols-3 gap-4">
                     <label htmlFor="employername">Partner Percentage:</label>
                     <input type="text" id="employername" className="form-control w-full rounded"
-                     />
+                    />
                   </div>
-                
-               
+
+
                   <div className="mb-6 grid grid-cols-3 gap-4">
                     <button
                       style={{ backgroundColor: "#84abeb" }}
@@ -561,54 +561,72 @@ const Index = () => {
 
 
             <div className={`block p-6 rounded-lg bg-white w-full ${togglee4}`}>
-              <p className="mb-3 font-bold">Current Residential address</p>
               <form>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="House/Plot No" />
+                <div className="">
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Property Type:</label>
+                    <select className="form-select" name="" id="typeofbusiness">
+                      <option selected>Open this select menu</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
                   </div>
 
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Street" />
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Property Address:</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
                   </div>
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Town/Area" />
+
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Rental Type:</label>
+
+
+                    <select className="form-select" name="" id="typeofbusiness">
+                      <option selected>Open this select menu</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Rental Amount(Annual):</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
+                  </div>
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Renter Name:</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
+                  </div>
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Renter Phone number:</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
+                  </div>
+
+
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <button
+                      style={{ backgroundColor: "#84abeb" }}
+                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                      type="submit"
+                    >
+                      Add another property
+                    </button>
+                  </div>
+
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="comments">Optional Comments:</label>
+                    <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
                 </div>
-
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="LGA" />
-                  </div>
-
-
-                </div>
-
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Annual rent" />
-                  </div>
-
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Name of owner" />
-                  </div>
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Phone number" />
-                  </div>
-                </div>
-
               </form>
             </div>
 
             <div className="flex justify-between mb-5">
-
 
               <p>Did you receive any bank interest ? </p>
 
@@ -631,49 +649,48 @@ const Index = () => {
 
 
             <div className={`block p-6 rounded-lg bg-white w-full ${togglee5}`}>
-              <p className="mb-3 font-bold">Current Residential address</p>
               <form>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="House/Plot No" />
+                <div className="">
+
+
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Bank Name:</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
                   </div>
 
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Street" />
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Bank Account:</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
                   </div>
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Town/Area" />
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Bank Verification Number (BVN):</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
+                  </div>
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Gross Amount:</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
+                  </div>
+
+
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <button
+                      style={{ backgroundColor: "#84abeb" }}
+                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                      type="submit"
+                    >
+                      Add another Bank
+                    </button>
+                  </div>
+
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="comments">Optional Comments:</label>
+                    <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
                 </div>
-
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="LGA" />
-                  </div>
-
-
-                </div>
-
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Annual rent" />
-                  </div>
-
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Name of owner" />
-                  </div>
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Phone number" />
-                  </div>
-                </div>
-
               </form>
             </div>
 
@@ -697,56 +714,46 @@ const Index = () => {
             </div>
 
             <div className={`block p-6 rounded-lg bg-white w-full ${togglee6}`}>
-              <p className="mb-3 font-bold">Current Residential address</p>
               <form>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="House/Plot No" />
+                <div className="">
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Company Name:</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
                   </div>
 
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Street" />
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Company address:</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
                   </div>
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Town/Area" />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="LGA" />
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Gross Amount:</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
                   </div>
 
-
-                </div>
-
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Annual rent" />
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <button
+                      style={{ backgroundColor: "#84abeb" }}
+                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                      type="submit"
+                    >
+                      Add another Company
+                    </button>
                   </div>
 
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Name of owner" />
-                  </div>
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Phone number" />
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="comments">Optional Comments:</label>
+                    <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
                 </div>
-
               </form>
             </div>
 
             <div className="flex justify-between mb-5">
 
               <p>Did you receive Pension ? </p>
-
 
               <div className="flex">
                 <div className="form-check form-check-inline">
@@ -761,49 +768,30 @@ const Index = () => {
               </div>
             </div>
             <div className={`block p-6 rounded-lg bg-white w-full ${togglee7}`}>
-              <p className="mb-3 font-bold">Current Residential address</p>
               <form>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="House/Plot No" />
+                <div className="">
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">PFA:</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
                   </div>
 
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Street" />
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">PFA address:</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
                   </div>
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Town/Area" />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="LGA" />
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="employername">Gross Amount:</label>
+                    <input type="text" id="employername" className="form-control w-full rounded"
+                    />
                   </div>
 
-
-                </div>
-
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Annual rent" />
-                  </div>
-
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Name of owner" />
-                  </div>
-                  <div className="form-group mb-6">
-                    <input type="text" className="form-control w-full rounded"
-                      placeholder="Phone number" />
+                  <div className="mb-6 grid grid-cols-3 gap-4">
+                    <label htmlFor="comments">Optional Comments:</label>
+                    <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
                 </div>
-
               </form>
             </div>
 
