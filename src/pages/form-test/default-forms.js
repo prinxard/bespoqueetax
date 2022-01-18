@@ -307,27 +307,42 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="3" className='rounded'></textarea>
                   </div>
+                  <div className="mb-6 flex justify-center">
+                    <button
+                      style={{ backgroundColor: "#84abeb" }}
+                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </form>
+
             </div>
 
-            <div className="flex justify-between mb-5">
+            <div>
 
-              <p>Were you self employed ? </p>
+              <div className="flex justify-between mb-5">
+                <p>Were you self employed ? </p>
 
-              <div className="flex">
+                <div className="flex">
 
-                <div className="form-check form-check-inline">
-                  <input onClick={onChange3} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1" />
-                  <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
-                </div>
+                  <div className="form-check form-check-inline">
+                    <input onClick={onChange3} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1" />
+                    <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
+                  </div>
 
-                <div className="form-check form-check-inline ml-5">
-                  <input onClick={onChange4} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2" />
-                  <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
+                  <div className="form-check form-check-inline ml-5">
+                    <input onClick={onChange4} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2" />
+                    <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
+                  </div>
                 </div>
               </div>
+
             </div>
+
+
 
             <div className={`flex justify-center border mb-3 p-6 rounded-lg bg-white w-full ${togglee2}`}>
               <form>
@@ -1086,9 +1101,16 @@ const Index = () => {
                 </div>
               </div>
             </form>
-
           </div>
-
+          <div className="mb-6 flex justify-center">
+            <button
+              style={{ backgroundColor: "#84abeb" }}
+              className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+              type="submit"
+            >
+              Submit form
+            </button>
+          </div>
         </div>
       </Widget>
     </>
