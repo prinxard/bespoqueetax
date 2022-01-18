@@ -130,16 +130,16 @@ const initialState = [
       {
         url: '/',
         icon: <Invoice />,
-        title: 'Pages',
+        title: 'Direct Assesment',
         items: [
           {
             url: '/form-test/default-forms',
-            title: 'default forms',
+            title: 'forms',
             items: [],
           },
           {
             url: '/form-test/sample-forms',
-            title: 'sample forms',
+            // title: 'sample forms',
             items: [],
           },
           // {
