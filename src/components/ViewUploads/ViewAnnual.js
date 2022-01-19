@@ -71,28 +71,29 @@ const ViewAnnual = () => {
 
   const onChange = e => {
     e.preventDefault()
-    let yeardata = "2020-01-01"
+    let yeardata = "2021-01-01"
     setYear(yeardata)
     setIsFetching(true)
   };
   const onChange2 = e => {
     e.preventDefault()
-    let yeardata = "2019-01-01"
+    let yeardata = "2020-01-01"
     setYear(yeardata)
     setIsFetching(true)
   };
 
   const onChange3 = e => {
     e.preventDefault()
-    let yeardata = "2018-01-01"
+    let yeardata = "2019-01-01"
     setYear(yeardata)
     setIsFetching(true)
   };
 
   const onChange4 = e => {
     e.preventDefault()
-    let yeardata = "2017-01-01"
+    let yeardata = "2018-01-01"
     setYear(yeardata)
+    setIsFetching(true)
   };
 
   // Get current post
@@ -127,7 +128,7 @@ const ViewAnnual = () => {
             <Widget1
               color="green"
               // title="2020"
-              description="2020"
+              description="2021"
               right={<Icons.RevenueItems />}
             />
           </a>
@@ -139,7 +140,7 @@ const ViewAnnual = () => {
             <Widget1
               color="red"
               // title="2019"
-              description="2019"
+              description="2020"
               right={<Icons.RevenueItems />}
             />
           </a>
@@ -150,7 +151,7 @@ const ViewAnnual = () => {
             <Widget1
               color="blue"
               // title="2018"
-              description="2018"
+              description="2019"
               right={<Icons.RevenueItems />}
             />
           </a>
@@ -161,7 +162,7 @@ const ViewAnnual = () => {
             <Widget1
               color="yellow"
               // title="2017"
-              description="2017"
+              description="2018"
               right={<Icons.RevenueItems />}
             />
           </a>
