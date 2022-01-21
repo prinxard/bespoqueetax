@@ -67,6 +67,7 @@ const AccountSettings = ({message = null}) => {
       error: {required: 'Please enter a valid position'},
       name: 'position',
       type: 'text',
+      className: ' w-64',
       placeholder: `${details.tax_office}`
     },
     // {

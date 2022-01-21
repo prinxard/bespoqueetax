@@ -79,7 +79,7 @@ const initialState = [
               },
               { title: 'Upload Document', url: '/uploads/annualcsv', items: [] },
               { title: 'View document', url: '/view/viewdocuments', items: [] },
-            
+
             ],
           },
           {
@@ -125,6 +125,29 @@ const initialState = [
         icon: <UserGuide />,
         title: 'USER GUIDE',
         items: [],
+      },
+
+      {
+        url: '/',
+        icon: <Invoice />,
+        title: 'Direct Assesment',
+        items: [
+          {
+            url: '/form-test/default-forms',
+            title: 'forms',
+            items: [],
+          },
+          {
+            url: '/form-test/sample-forms',
+            // title: 'sample forms',
+            items: [],
+          },
+          // {
+          //   url: '/payment/pending-invoice',
+          //   title: 'Unpaid Assessment',
+          //   items: [],
+          // },
+        ],
       },
 
       // {

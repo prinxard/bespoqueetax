@@ -148,6 +148,7 @@ const FormValidation = ({items, onSubmit, alerts}) => {
                   ref={item.ref}
                   name={item.name}
                   type={item.type}
+                  size={'100'}
                   className={`form-input ${
                     errors[item.name] ? 'border-red-500' : ''
                   }`}

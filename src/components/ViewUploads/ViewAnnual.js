@@ -145,8 +145,8 @@ const ViewAnnual = () => {
           </a>
         </div>
 
-        <div className="w-full lg:w-1/4" onClick={onChange3}>
-          <a href="">
+        <div className="w-full lg:w-1/4" >
+          <a href="" onClick={onChange3}>
             <Widget1
               color="blue"
               // title="2018"
@@ -156,16 +156,16 @@ const ViewAnnual = () => {
           </a>
         </div>
 
-        {/* <div className="w-full lg:w-1/4" onClick={onChange4}>
-          <a href="">
+        <div className="w-full lg:w-1/4">
+          <a href="" onClick={onChange4}>
             <Widget1
               color="yellow"
-              title="2017"
-              description={formatNumber(data[0].taxReceipts)}
-              right={<Icons.TaxReceipt />}
+              // title="2017"
+              description="2017"
+              right={<Icons.RevenueItems />}
             />
           </a>
-        </div> */}
+        </div>
       </div>
 
       {isFetching && (
