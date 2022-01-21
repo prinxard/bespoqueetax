@@ -15,11 +15,39 @@ const Index = () => {
   const [togglee10, setToggle10] = useState('hidden')
   const [togglee11, setToggle11] = useState('hidden')
   const [togglee12, setToggle12] = useState('hidden')
+  const [formValues, setFormValues] = useState([{
+    employername: "", employeraddress: "", tax:
+      "", startdate: "", grosspay: "", upload: ""
+  }])
 
+  let handleChange = (i, e) => {
+    let newFormValues = [...formValues];
+    newFormValues[i][e.target.name] = e.target.value;
+    setFormValues(newFormValues);
+  }
+
+  const addFormFields = (event) => {
+    event.preventDefault()
+    setFormValues([...formValues, {
+      employername: "", employeraddress: "", tax:
+        "", startdate: "", grosspay: "", upload: ""
+    }])
+  }
+
+  let removeFormFields = (i) => {
+    let newFormValues = [...formValues];
+    newFormValues.splice(i, 1);
+    setFormValues(newFormValues)
+  }
   const onChange = e => {
     let toggleval = ' '
     setToggle(toggleval)
   };
+
+  // const handleAdd = (e) => {
+  //   e.preventDefault();
+  //   console.log('You clicked submit.');
+  // }
 
   const onChange2 = e => {
     let toggleval = 'hidden'
@@ -245,7 +273,7 @@ const Index = () => {
       <h6 className="p-2">Income details</h6>
 
       <Widget>
-        <div>
+        <div className="p-10" >
           <div >
             <div className="flex justify-between mb-5 ">
               <p>Were you employed ? </p>
@@ -264,59 +292,62 @@ const Index = () => {
 
             <div className={`flex justify-center border mb-3 p-6 rounded-lg bg-white w-full ${toggleel}`}>
               <form>
-                <div>
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label>Employer Name:</label>
-                    <input type="text" className="form-control w-full rounded" />
-                  </div>
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label>Employer Address:</label>
-                    <input type="text" className="form-control w-full rounded" />
-                  </div>
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label>Your start date:</label>
-                    <input type="text" className="form-control w-full rounded"
-                    />
-                  </div>
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label>Gross pay:</label>
-                    <input type="text" className="form-control w-full rounded"
-                    />
-                  </div>
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label>Tax deducted:</label>
-                    <input type="text" className="form-control w-full rounded"
-                    />
-                  </div>
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label>Upload Pay slip or schedule:</label>
-                    <input type="file" className="w-full"
-                    />
-                  </div>
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <button
-                      style={{ backgroundColor: "#84abeb" }}
-                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
-                      type="submit"
-                    >
-                      Add another employment
-                    </button>
-                  </div>
+                {formValues.map((element, index) => (
+                  <div key={index}>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label>Employer Name:</label>
+                      <input type="text" name="employername" className="form-control w-full rounded" />
+                    </div>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label>Employer Address:</label>
+                      <input type="text" name="employeraddress" className="form-control w-full rounded" />
+                    </div>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label>Your start date:</label>
+                      <input type="text" name="startdate" className="form-control w-full rounded"
+                      />
+                    </div>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label>Gross pay:</label>
+                      <input type="text" name="grosspay" className="form-control w-full rounded"
+                      />
+                    </div>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label>Tax deducted:</label>
+                      <input type="text" name="tax" className="form-control w-full rounded"
+                      />
+                    </div>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label>Upload Pay slip or schedule:</label>
+                      <input type="file" name="upload" className="w-full"
+                      />
+                    </div>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <button
+                        style={{ backgroundColor: "#84abeb" }}
+                        className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                        onClick={ addFormFields }
+                        // onClick={(e) => e.preventDefault()}
+                      >
+                        Add another employment
+                      </button>
+                    </div>
 
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="comments">Optional Comments:</label>
-                    <textarea name="" id="comments" cols="40" rows="3" className='rounded'></textarea>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="comments">Optional Comments:</label>
+                      <textarea name="" id="comments" cols="40" rows="3" className='rounded'></textarea>
+                    </div>
+                    <div className="mb-6 flex justify-center">
+                      <button
+                        style={{ backgroundColor: "#84abeb" }}
+                        className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        Submit
+                      </button>
+                    </div>
                   </div>
-                  <div className="mb-6 flex justify-center">
-                    <button
-                      style={{ backgroundColor: "#84abeb" }}
-                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
-                      type="submit"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </div>
+                ))}
               </form>
 
             </div>
@@ -344,7 +375,7 @@ const Index = () => {
 
 
 
-            <div className={`flex justify-center border mb-3 p-6 rounded-lg bg-white w-full ${togglee2}`}>
+            <div className={`flex justify-center border mb-3 p-6 rounded-lg bg-white w-fulll ${togglee2}`}>
               <form>
                 <div>
                   <div className="mb-6 grid grid-cols-3 gap-4">
@@ -479,7 +510,15 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="3" className="rounded"></textarea>
                   </div>
-
+                  <div className="mb-6 flex justify-center">
+                    <button
+                      style={{ backgroundColor: "#84abeb" }}
+                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -543,6 +582,15 @@ const Index = () => {
                   <div className="mb-6 grid grid-cols-3 gap-4">
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
+                  </div>
+                  <div className="mb-6 flex justify-center">
+                    <button
+                      style={{ backgroundColor: "#84abeb" }}
+                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
                   </div>
                 </div>
               </form>
@@ -631,6 +679,15 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
+                  <div className="mb-6 flex justify-center">
+                    <button
+                      style={{ backgroundColor: "#84abeb" }}
+                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -698,6 +755,15 @@ const Index = () => {
                   <div className="mb-6 grid grid-cols-3 gap-4">
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
+                  </div>
+                  <div className="mb-6 flex justify-center">
+                    <button
+                      style={{ backgroundColor: "#84abeb" }}
+                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
                   </div>
                 </div>
               </form>
@@ -800,6 +866,15 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
+                  <div className="mb-6 flex justify-center">
+                    <button
+                      style={{ backgroundColor: "#84abeb" }}
+                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -878,6 +953,15 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
+                  <div className="mb-6 flex justify-center">
+                    <button
+                      style={{ backgroundColor: "#84abeb" }}
+                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -930,6 +1014,15 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
+                  <div className="mb-6 flex justify-center">
+                    <button
+                      style={{ backgroundColor: "#84abeb" }}
+                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -942,7 +1035,7 @@ const Index = () => {
       <h6 className="p-2">Deductions</h6>
 
       <Widget>
-        <div>
+        <div className="p-10">
 
           <div className="flex justify-between mb-5">
 
@@ -994,6 +1087,15 @@ const Index = () => {
                 <div className="mb-6 grid grid-cols-3 gap-4">
                   <label htmlFor="comments">Optional Comments:</label>
                   <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
+                </div>
+                <div className="mb-6 flex justify-center">
+                  <button
+                    style={{ backgroundColor: "#84abeb" }}
+                    className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
                 </div>
               </div>
             </form>
@@ -1047,6 +1149,15 @@ const Index = () => {
                   <label htmlFor="comments">Optional Comments:</label>
                   <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                 </div>
+                <div className="mb-6 flex justify-center">
+                  <button
+                    style={{ backgroundColor: "#84abeb" }}
+                    className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
               </div>
             </form>
           </div>
@@ -1098,6 +1209,15 @@ const Index = () => {
                 <div className="mb-6 grid grid-cols-3 gap-4">
                   <label htmlFor="comments">Optional Comments:</label>
                   <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
+                </div>
+                <div className="mb-6 flex justify-center">
+                  <button
+                    style={{ backgroundColor: "#84abeb" }}
+                    className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
                 </div>
               </div>
             </form>

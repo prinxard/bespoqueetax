@@ -3,6 +3,7 @@ import { formatNumber } from "../../functions/numbers";
 import * as Icons from '../../components/Icons/index';
 import Widget1 from "../dashboard/widget-1";
 import dateformat from "dateformat";
+import Link from 'next/link';
 
 const fields = [
   // {
@@ -62,9 +63,8 @@ const fields = [
 
 export const ViewAnnualTable = ({ remittance, totalemployees, totaltax, grosssum }) => {
   let items = remittance;
-  // let lstest = "2022-01-01"
-  // let tody =  dateformat(lstest, 'ddd, mmm dS, yyyy')
-  // console.log(items)
+  
+  console.log(remittance)
   remittance.map((remittance) => {
     remittance["amount"] = formatNumber(remittance["amount"]);
     if (remittance["status"] === 1) {
@@ -93,12 +93,12 @@ export const ViewAnnualTable = ({ remittance, totalemployees, totaltax, grosssum
               <tr key={i} className="">
                 {fields.map((field, j) => (
                   <td key={j} className="">
-                    {remittance[field.key]}
-                    {/* <Link href={`/dashboard/${remittance["ref"]}`}>
+                    {/* {remittance[field.key]} */}
+                    <Link href={`${remittance.employer_id}`}>
                       <a className="hover:text-blue-500">
                         {remittance[field.key]}
                       </a>
-                    </Link> */}
+                    </Link>
                   </td>
                 ))}
               </tr>
