@@ -40,7 +40,6 @@ const ViewAnnual = () => {
         let sum = [];
         for (let i = 0; i < res.length; i++) {
           let rec = res[i];
-          // console.log(rec.tax_pay_cal);
           sum.push(rec.tax_pay_cal);
           rec.tax_pay_cal = formatNumber(rec.tax_pay_cal);
           rec.net_tax_ded = formatNumber(rec.net_tax_ded);
