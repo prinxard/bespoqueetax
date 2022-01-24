@@ -14,7 +14,7 @@ import Link from "next/link";
 import Loader from "react-loader-spinner";
 import { ViewAnnualTableSingle } from "../tables/viewAnnual";
 
-const ViewMonthlySingle = () => {
+const ViewAnnualSingle = () => {
   const [post, setPost] = useState(() => []);
   const [total, setTotal] = useState(() => []);
   const [isFetching, setIsFetching] = useState(() => true);
@@ -238,4 +238,4 @@ const ViewMonthlySingle = () => {
   );
 };
 
-export default ViewMonthlySingle;
+export default ViewAnnualSingle;
