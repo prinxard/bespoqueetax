@@ -6,27 +6,64 @@ import dateformat from "dateformat";
 import Link from 'next/link';
 
 const fields = [
+  // {
+  //   name: "Tax ID",
+  //   key: "id",
+  // },
+  {
+    name: "Staff names",
+    key: "staff_names",
+  },
+  {
+    name: "Number of Months",
+    key: "no_months",
+  },
+  {
+    name: "Gross Salary",
+    key: "gross_income",
+  },
+  {
+    name: "Pension",
+    key: "pension",
+  },
+  {
+    name: "NHIS",
+    key: "nhis",
+  },
+  {
+    name: "LAP",
+    key: "lap",
+  },
+  {
+    name: "NHF",
+    key: "nhf",
+  },
+  {
+    name: "Consolidated Relief Allowance",
+    key: "con_rel_cal",
+  },
+  {
+    name: "Net tax deducted",
+    key: "net_tax_ded",
+  },
+  {
+    name: "Expected tax",
+    key: "tax_pay_cal",
+  },
+  {
+    name: "Variance",
+    key: "variance_cal",
+  },
   {
     name: "Year",
     key: "year",
-  },
-  {
-    name: "Basic Salary",
-    key: "basicSalary",
-  },
-  {
-    name: "Net Tax deducted",
-    key: "netTaxDeduct",
-  },
-  {
-    name: "Total Tax",
-    key: "tax_pay_cal",
   },
 
 ];
 
 export const ViewAnnualTable = ({ remittance, totalemployees, totaltax, grosssum }) => {
   let items = remittance;
+  
   console.log(remittance)
   remittance.map((remittance) => {
     remittance["amount"] = formatNumber(remittance["amount"]);
@@ -57,7 +94,7 @@ export const ViewAnnualTable = ({ remittance, totalemployees, totaltax, grosssum
                 {fields.map((field, j) => (
                   <td key={j} className="">
                     {/* {remittance[field.key]} */}
-                    <Link href={`/view/annual/${remittance.year}`}>
+                    <Link href={`${remittance.employer_id}`}>
                       <a className="hover:text-blue-500">
                         {remittance[field.key]}
                       </a>
@@ -91,100 +128,6 @@ export const ViewAnnualTable = ({ remittance, totalemployees, totaltax, grosssum
           <p className="px-6">Variance</p>
         </div>
         {/* <div>{total}</div> */}
-      </Widget>
-    </>
-  );
-};
-
-const singleFields = [
-  // { name: 'Status', key: 'status' },
-
-  {
-    name: 'Staff Name',
-    key: 'staff_names',
-  },
-  {
-    name: 'Number of months',
-    key: 'no_months',
-  },
-  {
-    name: 'Basic Salary',
-    key: 'basic_salary',
-  },
-  {
-    name: 'Pension',
-    key: 'pension',
-  },
-  {
-    name: 'NHIS',
-    key: 'nhis',
-  },
-
-  {
-    name: 'LAP',
-    key: 'lap',
-  },
-
-  {
-    name: 'CONSOLIDATED RELIEF ALLOWANCE',
-    key: 'con_rel_cal',
-  },
-  {
-    name: 'Net Tax Deducted',
-    key: 'net_tax_ded',
-  },
-  {
-    name: 'Expected Tax',
-    key: 'tax_pay_cal',
-  },
-
-  {
-    name: 'Year',
-    key: 'year',
-  },
-];
-
-export const ViewAnnualTableSingle = ({ remittance, total }) => {
-  const items = remittance;
-
-  return (
-    <>
-      <Widget>
-        <div className="overflow-x-auto">
-          <table className="table divide-y">
-            <thead className="">
-              <tr className="font-semibold text-blue-400">
-                {singleFields.map((field, i) => (
-                  <th key={i} className="">
-                    {field.name}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="divide-y">
-              {items.map((remittance, i) => (
-                <tr key={i} className="">
-                  {singleFields.map((field, j) => (
-                    <td key={j} className="">
-                      {remittance[field.key]}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-              {items.length > 0 && (
-                <tr className="font-semibold">
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  {/* <td>{formatNumber(total.totalSalary)}</td>
-                  <td>{formatNumber(total.totalChargeable)}</td>
-                  <td>{formatNumber(total.totalRelief)}</td>
-                  <td>{formatNumber(total.totalTax)}</td> */}
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
       </Widget>
     </>
   );

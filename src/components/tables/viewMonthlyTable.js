@@ -28,7 +28,6 @@ const fields = [
 
 export const ViewMonthlyTable = ({ remittance, total }) => {
   const items = remittance;
-
   return (
     <>
       <Widget>
