@@ -25,6 +25,8 @@ const ViewMonthlySingle = () => {
   useEffect(() => {
     if (router && router.query) {
       let period = router.query.period;
+      // console.log(router.query);
+      console.log(period);
       setAuthToken();
       const fetchPost = async () => {
         try {

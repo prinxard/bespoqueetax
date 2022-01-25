@@ -7,6 +7,7 @@ import url from '../../config/url';
 import { FiX, FiCheck } from 'react-icons/fi';
 import setAuthToken from '../../functions/setAuthToken';
 import { ProcessorSpinner, Progress } from '../spiner/index';
+import { Select, SelectMonth } from '../forms/selects';
 
 const AnnualCSVUploadForm = () => {
   //handle file
@@ -100,6 +101,7 @@ const AnnualCSVUploadForm = () => {
   const [submitting16, setSubmitting16] = useState(false);
   const [submitting17, setSubmitting17] = useState(false);
   const [submitting18, setSubmitting18] = useState(false);
+  const { register, handleSubmit } = useForm();
 
 
 
@@ -554,13 +556,13 @@ const AnnualCSVUploadForm = () => {
   };
 
   const onSubmit = async data => {
-    data.preventDefault();
+    // data.preventDefault();
     let employer_id = localStorage.getItem("kgtin")
     const year = String(new Date().getFullYear() - 1);
     const formData = new FormData();
     formData.append('employer_id', employer_id);
     formData.append('cover_letter', file);
-    formData.append('year', year);
+    // formData.append('year', year);
     setAuthToken();
     setSubmitting(true)
     try {
@@ -597,9 +599,10 @@ const AnnualCSVUploadForm = () => {
   };
 
   const onSubmit2 = async data => {
-    data.preventDefault();
+    console.log(data.year);
+    // data.preventDefault();
     let employer_id = localStorage.getItem("kgtin")
-    const year = String(new Date().getFullYear() - 1);
+    const year = data.year;
     const formData = new FormData();
     formData.append('employer_id', employer_id);
     formData.append('indv_return_letter', file2);
@@ -1085,7 +1088,7 @@ const AnnualCSVUploadForm = () => {
     }
   };
 
-  const onSubmit13= async data => {
+  const onSubmit13 = async data => {
     data.preventDefault();
     let employer_id = localStorage.getItem("kgtin")
     const year = String(new Date().getFullYear() - 1);
@@ -1130,7 +1133,7 @@ const AnnualCSVUploadForm = () => {
     }
   };
 
-  const onSubmit14= async data => {
+  const onSubmit14 = async data => {
     data.preventDefault();
     let employer_id = localStorage.getItem("kgtin")
     const year = String(new Date().getFullYear() - 1);
@@ -1175,7 +1178,7 @@ const AnnualCSVUploadForm = () => {
     }
   };
 
-  const onSubmit15= async data => {
+  const onSubmit15 = async data => {
     data.preventDefault();
     let employer_id = localStorage.getItem("kgtin")
     const year = String(new Date().getFullYear() - 1);
@@ -1220,7 +1223,7 @@ const AnnualCSVUploadForm = () => {
     }
   };
 
-  const onSubmit16= async data => {
+  const onSubmit16 = async data => {
     data.preventDefault();
     let employer_id = localStorage.getItem("kgtin")
     const year = String(new Date().getFullYear() - 1);
@@ -1265,7 +1268,7 @@ const AnnualCSVUploadForm = () => {
     }
   };
 
-  const onSubmit17= async data => {
+  const onSubmit17 = async data => {
     data.preventDefault();
     let employer_id = localStorage.getItem("kgtin")
     const year = String(new Date().getFullYear() - 1);
@@ -1310,7 +1313,7 @@ const AnnualCSVUploadForm = () => {
     }
   };
 
-  const onSubmit18= async data => {
+  const onSubmit18 = async data => {
     data.preventDefault();
     let employer_id = localStorage.getItem("kgtin")
     const year = String(new Date().getFullYear() - 1);
@@ -1361,10 +1364,20 @@ const AnnualCSVUploadForm = () => {
       {/* <TokenModalsOverlay>
         <TokenModals />
       </TokenModalsOverlay> */}
+      <div className="flex justify-center flex-col lg:flex-row lg:flex-wrap w-full lg:space-x-4">
+        <div className="w-full lg:w-1/12">
+          <Select
+            label="Select Year"
+            required
+            ref={register()}
+            name="year"
+          />
+        </div>
+      </div>
       <h6 className="p-2 font-bold">Correspondence</h6>
       <Widget>
         <div>
-          <form onSubmit={onSubmit}>
+          <form onSubmit={handleSubmit(onSubmit)}>
 
             <div className="flex justify-between mb-5">
               <p>Cover letter of submission of annual returns <span className="font-bold" style={{ color: "red" }}> * </span><small>(pdf, jpg, png)</small> </p>
@@ -1415,7 +1428,7 @@ const AnnualCSVUploadForm = () => {
 
           <hr className="mb-2" />
 
-          <form onSubmit={onSubmit2}>
+          <form onSubmit={handleSubmit(onSubmit2)}>
             <div className="flex justify-between mb-5">
               <p>Copy of letter mandating employees to file individual tax returns <span className="font-bold" style={{ color: "red" }}> * </span> <small>(pdf, jpg, png)</small></p>
               <input
@@ -2106,7 +2119,7 @@ const AnnualCSVUploadForm = () => {
       <div className="mt-12"><h6 className="p-2 font-bold">Deductions</h6></div>
 
       <Widget>
-      <form onSubmit={onSubmit15}>
+        <form onSubmit={onSubmit15}>
           <div className="flex justify-between mb-5">
             <p>Evidence of remittance of pension <span className="font-bold" style={{ color: "red" }}> * </span> <small>(pdf, jpg, png)</small></p>
             <input
