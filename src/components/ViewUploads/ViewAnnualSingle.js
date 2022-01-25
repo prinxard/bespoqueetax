@@ -64,7 +64,7 @@ const ViewAnnualSingle = () => {
             rec.totalRelief = formatNumber(rec.totalRelief);
             rec.chargeable = formatNumber(rec.chargeable);
             rec.salary = formatNumber(rec.salary);
-            rec.name = `${rec.surname} ${rec.middleName} ${rec.firstName}`;
+            rec.name = rec.staff_names;
             records.push(rec);
           }
 
