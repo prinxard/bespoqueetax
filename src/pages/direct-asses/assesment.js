@@ -1,5 +1,6 @@
 import Widget from '../../components/widget'
 import SectionTitle from '../../components/section-title';
+import { FiArrowUp, FiTriangle } from 'react-icons/fi';
 
 import { useState } from 'react'
 
@@ -16,6 +17,7 @@ const Index = () => {
   const [togglee10, setToggle10] = useState('hidden')
   const [togglee11, setToggle11] = useState('hidden')
   const [togglee12, setToggle12] = useState('hidden')
+  const [resiToggle, setresToggle] = useState('hidden')
   const [formValues, setFormValues] = useState([{
     employername: "", employeraddress: "", tax:
       "", startdate: "", grosspay: "", upload: ""
@@ -51,6 +53,7 @@ const Index = () => {
   // }
 
   const onChange2 = e => {
+    // e.preventDefault()
     let toggleval = 'hidden'
     setToggle(toggleval)
   };
@@ -61,6 +64,7 @@ const Index = () => {
 
   };
   const onChange4 = e => {
+    // e.preventDefault()
     let toggleval = 'hidden'
     setToggle2(toggleval)
 
@@ -158,6 +162,18 @@ const Index = () => {
   const onChange24 = e => {
     let toggleval = 'hidden'
     setToggle12(toggleval)
+
+  };
+
+  const onresidenceToggleYes = e => {
+    let toggleval = 'hidden'
+    setresToggle(toggleval)
+
+  };
+
+  const onresidenceToggleNo = e => {
+    let toggleval = ''
+    setresToggle(toggleval)
 
   };
 
@@ -264,14 +280,21 @@ const Index = () => {
 
             <div className="form-check form-check-inline ml-5">
               <p>Do you own your place of residence?</p>
-              <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">Owner</label>
-              <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
-              <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
-              {/* <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">Owner</label> */}
+              <div className="flex">
+                <div className="form-check form-check-inline">
+                  <input onChange={onresidenceToggleYes} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
+                  <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Owner</label>
+                </div>
+
+                <div className="form-check form-check-inline ml-5">
+                  <input onChange={onresidenceToggleNo} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
+                  <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">Rented</label>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className={`grid grid-cols-3 gap-4 ${resiToggle}`}>
             <div className="form-group mb-6">
               <input type="text" className="form-control w-full rounded"
                 placeholder="Annual rent" />
@@ -363,7 +386,7 @@ const Index = () => {
                   <textarea name="" id="comments" cols="40" rows="3" className='rounded'></textarea>
                 </div>
 
-                <div className="mb-6 flex justify-center">
+                <div className="mb-6 flex justify-between">
                   <button
                     style={{ backgroundColor: "#84abeb" }}
                     className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
@@ -371,8 +394,17 @@ const Index = () => {
                   >
                     Save
                   </button>
+                  {/* <span onClick={onChange2} className="h-10 w-10 bg-green-100 text-white flex items-center justify-center rounded-full text-lg font-display font-bold">
+                    <a href="">
+                      <FiTriangle
+                        size={15}
+                        className="stroke-current text-green-500"
+                      />
+                    </a>
+                  </span> */}
                 </div>
               </form>
+
 
             </div>
 
@@ -534,14 +566,22 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="3" className="rounded"></textarea>
                   </div>
-                  <div className="mb-6 flex justify-center">
+                  <div className="mb-6 flex justify-between">
                     <button
                       style={{ backgroundColor: "#84abeb" }}
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
                       type="submit"
                     >
-                      Submit
+                      Save
                     </button>
+                    <span onClick={onChange4} className="h-10 w-10 bg-green-100 text-white flex items-center justify-center rounded-full text-lg font-display font-bold">
+                      <a href="">
+                        <FiTriangle
+                          size={15}
+                          className="stroke-current text-green-500"
+                        />
+                      </a>
+                    </span>
                   </div>
                 </div>
               </form>
@@ -613,7 +653,7 @@ const Index = () => {
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
                       type="submit"
                     >
-                      Submit
+                      Save
                     </button>
                   </div>
                 </div>
@@ -709,7 +749,7 @@ const Index = () => {
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
                       type="submit"
                     >
-                      Submit
+                      Save
                     </button>
                   </div>
                 </div>
@@ -786,7 +826,7 @@ const Index = () => {
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
                       type="submit"
                     >
-                      Submit
+                      Save
                     </button>
                   </div>
                 </div>
@@ -896,7 +936,7 @@ const Index = () => {
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
                       type="submit"
                     >
-                      Submit
+                      Save
                     </button>
                   </div>
                 </div>
@@ -983,7 +1023,7 @@ const Index = () => {
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
                       type="submit"
                     >
-                      Submit
+                      Save
                     </button>
                   </div>
                 </div>
@@ -1044,7 +1084,7 @@ const Index = () => {
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
                       type="submit"
                     >
-                      Submit
+                      Save
                     </button>
                   </div>
                 </div>
@@ -1118,7 +1158,7 @@ const Index = () => {
                     className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
                     type="submit"
                   >
-                    Submit
+                    Save
                   </button>
                 </div>
               </div>
@@ -1179,7 +1219,7 @@ const Index = () => {
                     className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
                     type="submit"
                   >
-                    Submit
+                    Save
                   </button>
                 </div>
               </div>
@@ -1240,7 +1280,7 @@ const Index = () => {
                     className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
                     type="submit"
                   >
-                    Submit
+                    Save
                   </button>
                 </div>
               </div>
