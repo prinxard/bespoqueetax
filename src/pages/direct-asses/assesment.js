@@ -1,4 +1,5 @@
 import Widget from '../../components/widget'
+import SectionTitle from '../../components/section-title';
 
 import { useState } from 'react'
 
@@ -160,8 +161,11 @@ const Index = () => {
 
   };
 
+
+
   return (
     <>
+      <SectionTitle title="Applicable during the year ended 31st December 2021" />
       <div className="block p-6 rounded-lg bg-white w-full">
         <p className="mb-3 font-bold">Taxpayer Information</p>
         <form>
@@ -212,6 +216,12 @@ const Index = () => {
               <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
             </div>
           </div>
+          <button
+            style={{ backgroundColor: "#84abeb" }}
+            className="btn w-32 btn-default text-white btn-outlined bg-transparent rounded-md"
+          >
+            Edit
+          </button>
         </form>
       </div>
 
@@ -241,13 +251,23 @@ const Index = () => {
             </div>
 
             <div className="form-check form-check-inline">
-              <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
-              <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Rented</label>
+              {/* <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
+              <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Rented</label> */}
+
+              <select className="form-select w-full" name="" id="typeofbusiness">
+                <option selected>Type of Residence</option>
+                <option value="1">Apartment</option>
+                <option value="2">Town house</option>
+                <option value="3">Standalone house</option>
+              </select>
             </div>
 
             <div className="form-check form-check-inline ml-5">
-              <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
+              <p>Do you own your place of residence?</p>
               <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">Owner</label>
+              <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
+              <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
+              {/* <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">Owner</label> */}
             </div>
           </div>
 
@@ -322,32 +342,36 @@ const Index = () => {
                       <input type="file" name="upload" className="w-full"
                       />
                     </div>
-                    <div className="mb-6 grid grid-cols-3 gap-4">
-                      <button
-                        style={{ backgroundColor: "#84abeb" }}
-                        className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
-                        onClick={ addFormFields }
-                        // onClick={(e) => e.preventDefault()}
-                      >
-                        Add another employment
-                      </button>
-                    </div>
+                    <div className='pb-3'>
 
-                    <div className="mb-6 grid grid-cols-3 gap-4">
-                      <label htmlFor="comments">Optional Comments:</label>
-                      <textarea name="" id="comments" cols="40" rows="3" className='rounded'></textarea>
-                    </div>
-                    <div className="mb-6 flex justify-center">
-                      <button
-                        style={{ backgroundColor: "#84abeb" }}
-                        className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        Submit
-                      </button>
+                      <hr />
                     </div>
                   </div>
                 ))}
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <button
+                    style={{ backgroundColor: "#84abeb" }}
+                    className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                    onClick={addFormFields}
+                  >
+                    Add another employment
+                  </button>
+                </div>
+
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="comments">Optional Comments:</label>
+                  <textarea name="" id="comments" cols="40" rows="3" className='rounded'></textarea>
+                </div>
+
+                <div className="mb-6 flex justify-center">
+                  <button
+                    style={{ backgroundColor: "#84abeb" }}
+                    className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Save
+                  </button>
+                </div>
               </form>
 
             </div>
