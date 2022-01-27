@@ -137,6 +137,10 @@ const singleFields = [
     name: 'Expected Tax',
     key: 'tax_pay_cal',
   },
+  {
+    name: 'Variance',
+    key: 'variance_cal',
+  },
 
   {
     name: 'Year',

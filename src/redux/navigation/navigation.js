@@ -133,15 +133,16 @@ const initialState = [
         title: 'Direct Assesment',
         items: [
           {
-            url: '/form-test/default-forms',
+            url: '/direct-asses/assesment',
             title: 'forms',
             items: [],
           },
-          {
-            url: '/form-test/sample-forms',
-            // title: 'sample forms',
-            items: [],
-          },
+          // {
+          //   url: '/form-test/default-forms',
+          //   title: 'forms',
+          //   items: [],
+          // },
+        
           // {
           //   url: '/payment/pending-invoice',
           //   title: 'Unpaid Assessment',

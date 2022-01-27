@@ -26,8 +26,8 @@ const ViewAnnualSingle = () => {
   useEffect(() => {
     if (router && router.query) {
       let year = router.query.ref;
-          year = `${year}-01-01`
-          console.log(year);
+      year = `${year}-01-01`
+      console.log(year);
       let yearValue = {
         "year": `${year}`
       }
@@ -38,7 +38,7 @@ const ViewAnnualSingle = () => {
             `${url.BASE_URL}annual/view-annual`, yearValue
           );
           res = res.data.body.annualYr;
-            console.log(res);
+          console.log(res);
           let sum = {};
           let records = [];
           let salarySum = [];
@@ -138,11 +138,11 @@ const ViewAnnualSingle = () => {
     }
   };
 
-  const deletePrompt = (assessmentId) => {
-    if (window.confirm("Are you sure you want to delete this record?")) {
-      deleteHandler(assessmentId);
-    }
-  };
+  // const deletePrompt = (assessmentId) => {
+  //   if (window.confirm("Are you sure you want to delete this record?")) {
+  //     deleteHandler(assessmentId);
+  //   }
+  // };
 
   return (
     <>
@@ -162,50 +162,6 @@ const ViewAnnualSingle = () => {
         </div>
       )}
       <Widget>
-        <div className="flex lg:flex-wrap w-full lg:space-x-4 justify-between items-center">
-          <div className="w-32">
-            <NewFormInput
-              label="Search by name"
-              required
-              onChange={searchHandler}
-            />
-          </div>
-          {post[0]?.status === "Unpaid" ? (
-            <>
-              <div className="lg:flex md:flex justify-between">
-                <div className="w-32 mb-2">
-                  <Link href={`/pending-payment/${post[0]?.assessmentId}`}>
-                    <a className="inline-flex disabled:opacity-50 bg-green-500 py-2 px-6 rounded-md  text-white border hover:text-green-500 hover:bg-white hover:border-green-500">
-                      Pay Now
-                    </a>
-                  </Link>
-                </div>
-                <div className="w-32">
-                  <DeleteButton
-                    onClick={() => deletePrompt(post[0]?.assessmentId)}
-                  >
-                    Delete
-                  </DeleteButton>
-                </div>
-              </div>
-            </>
-          ) : post[0]?.status === "Paid" ? (
-            <>
-              <div className="lg:flex md:flex justify-between">
-                <div className="w-32 mb-2">
-                  <Link href={`/receipt/${post[0]?.assessmentId}`}>
-                    <a className="inline-flex disabled:opacity-50 bg-green-500 py-2 px-6 rounded-md  text-white border hover:text-green-500 hover:bg-white hover:border-green-500">
-                      Get Receipt
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </>
-          ) : (
-            <></>
-          )}
-        </div>
-
         <div className="mt-4">
           {query !== "" ? (
             <>
