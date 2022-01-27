@@ -18,6 +18,7 @@ const Index = () => {
   const [togglee11, setToggle11] = useState('hidden')
   const [togglee12, setToggle12] = useState('hidden')
   const [resiToggle, setresToggle] = useState('hidden')
+  const [form2toggle, setform2toggle] = useState('')
   const [formValues, setFormValues] = useState([{
     employername: "", employeraddress: "", tax:
       "", startdate: "", grosspay: "", upload: ""
@@ -177,6 +178,15 @@ const Index = () => {
 
   };
 
+  const formTog2 = e => {
+    e.preventDefault()
+    let toggleval = 'hidden'
+    setToggle2(toggleval)
+
+  };
+
+
+
 
 
   return (
@@ -232,17 +242,15 @@ const Index = () => {
               <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
             </div>
           </div>
-          <button
-            style={{ backgroundColor: "#84abeb" }}
-            className="btn w-32 btn-default text-white btn-outlined bg-transparent rounded-md"
-          >
-            Edit
-          </button>
         </form>
       </div>
 
       <div className="block p-6 rounded-lg bg-white w-full">
-        <p className="mb-3 font-bold">Current Residential address</p>
+        <div className="flex">
+          <p className="mb-3 font-bold pr-3">Current Residential address</p>
+          <a href="" className="text-blue-600">Edit</a>
+        </div>
+
         <form>
           <div className="grid grid-cols-3 gap-4">
             <div className="mb-6">
@@ -574,14 +582,14 @@ const Index = () => {
                     >
                       Save
                     </button>
-                    <span onClick={onChange4} className="h-10 w-10 bg-green-100 text-white flex items-center justify-center rounded-full text-lg font-display font-bold">
+                    <button onClick={formTog2} className="h-10 w-10 bg-green-100 text-white flex items-center justify-center rounded-full text-lg font-display font-bold">
                       <a href="">
                         <FiTriangle
                           size={15}
                           className="stroke-current text-green-500"
                         />
                       </a>
-                    </span>
+                    </button>
                   </div>
                 </div>
               </form>
